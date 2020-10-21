@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".login">
+
+    <EditText
+        android:id="@+id/username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="170703140113"
+        android:hint="请输入学号码"/>
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="101712mq"
+        android:hint="请输入密码"/>
+
+    <ImageView
+        android:id="@+id/capt_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="reget_capt"
+        />
+    <EditText
+        android:id="@+id/capt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:hint="请输入验证码"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="login"
+        android:text="登录"/>
+
+
+</LinearLayout>
