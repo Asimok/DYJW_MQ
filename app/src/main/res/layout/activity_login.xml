@@ -5,39 +5,79 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".login">
+    tools:context=".login"
+    >
+
+
+       <EditText
+android:layout_marginTop="100dp"
+           android:layout_gravity="center"
+           android:id="@+id/username"
+           android:layout_width="300dp"
+           android:layout_height="wrap_content"
+
+           android:hint="请输入学号码"/>
 
     <EditText
-        android:id="@+id/username"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="170703140113"
-        android:hint="请输入学号码"/>
-
-    <EditText
+        android:layout_gravity="center"
         android:id="@+id/password"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:text="101712mq"
+
         android:hint="请输入密码"/>
 
+<LinearLayout
+    android:layout_marginTop="10dp"
+    android:layout_width="300dp"
+    android:layout_gravity="center"
+    android:layout_height="50dp"
+    android:orientation="horizontal">
     <ImageView
+android:layout_gravity="center"
         android:id="@+id/capt_img"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
         android:onClick="reget_capt"
         />
     <EditText
+        android:layout_gravity="center"
         android:id="@+id/capt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
 
         android:hint="请输入验证码"/>
+</LinearLayout>
+
+    <TextView
+        android:layout_marginTop="100dp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
+        android:text="众筹一个背景图"/>
+
     <Button
-        android:layout_width="wrap_content"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        android:textSize="21sp"
+        android:layout_marginTop="150dp"
+        android:layout_gravity="center"
+        android:background="@drawable/b3"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:onClick="login"
         android:text="登录"/>
+    <Button
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        android:textSize="21sp"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center"
+        android:background="@drawable/b2"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:onClick="logout"
+        android:text="注销"/>
 
 
 </LinearLayout>

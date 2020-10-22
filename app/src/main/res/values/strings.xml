@@ -1,3 +1,15 @@
 <resources>
-    <string name="app_name">DYJW_MQ</string>
+    <string name="app_name">东油教务</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">嘿嘿！啥都没有呢</string>
+
+    <string name="menu_home">成绩查询</string>
+    <string name="menu_gallery">教务处-通知公告</string>
+    <string name="menu_slideshow">课表</string>
+    <string name="menu_tools">使用说明</string>
+    <string name="menu_send">联系作者</string>
 </resources>
