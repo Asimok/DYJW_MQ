@@ -8,10 +8,10 @@ android {
 
     defaultConfig {
         applicationId "com.example.dyjw_mq"
-        minSdkVersion 26
+        minSdkVersion 24
         targetSdkVersion 30
         versionCode 1
-        versionName "beta2"
+        versionName "beta2-兼容版"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
