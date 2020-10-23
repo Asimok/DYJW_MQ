@@ -267,7 +267,7 @@ public class scoredetailFragment extends Fragment {
         for (int i = 0; i < len; i++) {
             float max = 0, ssum = 0, sgpa = 0, meangpa = 0, means = 0, sc = 0;
             int lt60 = 0, aclass = 0;//小于60的数
-            int rt60=0,rt70=0,rt80=0,rt90=0,rt100=0;
+            int rt60 = 0, rt70 = 0, rt80 = 0, rt90 = 0, rt100 = 0;
             for (int j = 0; j < all_score.size(); j++) {
                 if (all_score.get(j).getXuenian().equals(all_xuenian.get(i))) {
                     float score = Float.parseFloat(all_score.get(j).getScore());
@@ -275,19 +275,19 @@ public class scoredetailFragment extends Fragment {
                         max = score;
                     if (score >= 60)
                         lt60++;
-                    if (score<60)
+                    if (score < 60)
                         rt60++;
-                    else if(score<70)
+                    else if (score < 70)
                         rt70++;
-                    else if(score<80)
+                    else if (score < 80)
                         rt80++;
-                    else if(score<90)
+                    else if (score < 90)
                         rt90++;
-                    else if(score<1000)
+                    else if (score < 1000)
                         rt100++;
 //                    Log.d(logs, all_score.get(j).getGpa());
-                    sc += Integer.parseInt(all_score.get(j).getCredit());
-                    ssum += score * Integer.parseInt(all_score.get(j).getCredit());
+                    sc += Float.parseFloat(all_score.get(j).getCredit());
+                    ssum += score * Float.parseFloat(all_score.get(j).getCredit());
 
 
                     aclass++;

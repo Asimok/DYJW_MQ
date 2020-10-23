@@ -1,6 +1,7 @@
 package com.example.dyjw_mq;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -9,9 +10,13 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -149,7 +154,19 @@ public class login extends AppCompatActivity {
                     }
                 })
                 .build();
-
+        capt_ed.setOnEditorActionListener(new EditText.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
+                if (i == EditorInfo.IME_ACTION_UNSPECIFIED) {
+//                    Toast.maketext(this,"你点击了回车",Toast.LENGTH_SHORT).show();
+                    //隐藏软键盘
+                    InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                    imm.hideSoftInputFromWindow(getWindow().getDecorView().getWindowToken(), 0);
+                    login_t();
+                }
+                return false;
+            }
+        });
 
         get_capt_img();
 
@@ -157,6 +174,10 @@ public class login extends AppCompatActivity {
     }
 
     public void login(View view) {
+        login_t();
+    }
+    private void login_t()
+    {
         username = username_ed.getText().toString();
         password = password_ed.getText().toString();
         capt = capt_ed.getText().toString();

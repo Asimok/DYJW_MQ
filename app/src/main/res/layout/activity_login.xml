@@ -1,83 +1,139 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".login"
-    >
 
-
-       <EditText
-android:layout_marginTop="100dp"
-           android:layout_gravity="center"
-           android:id="@+id/username"
-           android:layout_width="300dp"
-           android:layout_height="wrap_content"
-
-           android:hint="请输入学号码"/>
+   >
+<TextView
+    android:paddingTop="80dp"
+    android:layout_marginTop="90dp"
+    android:gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:textStyle="bold"
+    android:textSize="35sp"
+    android:textColor="#953314"
+    android:text="东油教务"
+    />
+    <LinearLayout
+        android:background="@drawable/b2"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="30dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
     <EditText
+        android:layout_margin="10dp"
+       android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="#ffffff"
+
+        android:id="@+id/username"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
+
+
+        android:hint="请输入学号" />
+
+    <EditText
+        android:layout_margin="10dp"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="#ffffff"
+
         android:id="@+id/password"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-
-        android:hint="请输入密码"/>
-
-<LinearLayout
-    android:layout_marginTop="10dp"
-    android:layout_width="300dp"
-    android:layout_gravity="center"
-    android:layout_height="50dp"
-    android:orientation="horizontal">
-    <ImageView
-android:layout_gravity="center"
-        android:id="@+id/capt_img"
-        android:layout_width="100dp"
-        android:layout_height="40dp"
-        android:onClick="reget_capt"
-        />
-    <EditText
         android:layout_gravity="center"
-        android:id="@+id/capt"
-        android:layout_width="200dp"
+        android:hint="请输入密码"
+
+        android:inputType="textPassword" />
+    </LinearLayout>
+    <LinearLayout
+        android:background="@drawable/b6"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
 
-        android:hint="请输入验证码"/>
-</LinearLayout>
+        <ImageView
+            android:id="@+id/capt_img"
+            android:layout_width="140dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:onClick="reget_capt" />
 
+        <EditText
+            android:layout_margin="10dp"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="#ffffff"
+android:gravity="center"
+            android:id="@+id/capt"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:hint="   请输入验证码   "
+            android:imeOptions="actionSearch"
+            android:inputType="textPostalAddress"
+            android:lines="1"
+            android:singleLine="true" />
+
+    </LinearLayout>
     <TextView
-        android:layout_marginTop="100dp"
-        android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="25sp"
-        android:text="众筹一个背景图"/>
+        android:layout_marginTop="100dp"
+        android:gravity="center"
+        android:text="众筹一个背景图"
+        android:textSize="25sp" />
 
-    <Button
-        android:textColor="#ffffff"
-        android:textStyle="bold"
-        android:textSize="21sp"
-        android:layout_marginTop="150dp"
-        android:layout_gravity="center"
-        android:background="@drawable/b3"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:onClick="login"
-        android:text="登录"/>
-    <Button
-        android:textColor="#ffffff"
-        android:textStyle="bold"
-        android:textSize="21sp"
-        android:layout_marginTop="30dp"
-        android:layout_gravity="center"
-        android:background="@drawable/b2"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:onClick="logout"
-        android:text="注销"/>
+   <RelativeLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+
+       <Button
+           android:layout_width="300dp"
+           android:layout_height="wrap_content"
+
+           android:layout_alignParentBottom="true"
+           android:layout_centerHorizontal="true"
+           android:layout_gravity="center"
+           android:layout_marginBottom="120dp"
+           android:background="@drawable/b3"
+           android:onClick="login"
+           android:text="登录"
+           android:textColor="#ffffff"
+           android:textSize="21sp"
+           android:textStyle="bold" />
+
+       <Button
+           android:layout_centerHorizontal="true"
+           android:layout_alignParentBottom="true"
+
+           android:layout_width="300dp"
+           android:layout_height="wrap_content"
+           android:layout_gravity="center"
+           android:layout_marginBottom="60dp"
+           android:background="@drawable/b2"
+           android:onClick="logout"
+           android:text="注销"
+           android:textColor="#ffffff"
+           android:textSize="21sp"
+           android:textStyle="bold" />
+   </RelativeLayout>
 
 
 </LinearLayout>
