@@ -45,7 +45,7 @@
                     android:layout_height="match_parent"
                     android:background="#00000000"
                     android:textColor="#f5f5f5"
-                    android:textSize="21sp"
+                    android:textSize="@dimen/qb_px_21"
                     android:textStyle="bold"
                     />
 
@@ -67,7 +67,7 @@
                     android:layout_height="match_parent"
                     android:background="#00000000"
                     android:textColor="#f6f7f8"
-                    android:textSize="18sp" />
+                    android:textSize="@dimen/qb_px_17" />
 
                 <TextView
                     android:id="@+id/credit"
@@ -77,7 +77,7 @@
                     android:layout_height="match_parent"
                     android:background="#00000000"
                     android:textColor="#f6f7f8"
-                    android:textSize="18sp" />
+                    android:textSize="@dimen/qb_px_17" />
                 <TextView
                     android:id="@+id/gpa"
                     android:text="绩点"
@@ -86,7 +86,7 @@
                     android:layout_height="match_parent"
                     android:background="#00000000"
                     android:textColor="#f6f7f8"
-                    android:textSize="18sp" />
+                    android:textSize="@dimen/qb_px_17" />
 
             </LinearLayout>
 
@@ -104,7 +104,7 @@
             android:layout_height="match_parent"
             android:background="#00000000"
             android:textColor="#d7f8f7"
-            android:textSize="27sp"
+            android:textSize="@dimen/qb_px_27"
             android:textStyle="bold"/>
     </LinearLayout>
 
