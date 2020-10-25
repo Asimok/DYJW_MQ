@@ -11,6 +11,8 @@
     <string name="menu_gallery">教务处-通知公告</string>
     <string name="menu_slideshow">绩点</string>
     <string name="menu_coursedetail">成绩分析</string>
+    <string name="menu_timetable">课表</string>
+
     <string name="menu_tools">使用必看</string>
     <string name="menu_send">联系作者</string>
     <string name="menu_update">检查更新</string>

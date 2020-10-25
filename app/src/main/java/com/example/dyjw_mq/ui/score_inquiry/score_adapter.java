@@ -54,6 +54,7 @@ public class score_adapter extends BaseAdapter {
         return 0;
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
@@ -83,19 +84,21 @@ else {
     credit_tv.setText("学分:" + data.get(position).getCredit());
     gpa_tv.setText("GPA:" + data.get(position).getGpa());
     score_tv.setText(data.get(position).getScore());
-    if(Integer.parseInt(data.get(position).getScore())<60){
+    //
+    float score_fl= Float.parseFloat(data.get(position).getScore());
+    if(score_fl<60){
 //        不及格
         Resources resources = context.getResources();
         @SuppressLint("UseCompatLoadingForDrawables") Drawable btnDrawable = resources.getDrawable(R.drawable.b2);
         ispass.setBackground(btnDrawable);
     }
-    else if(Integer.parseInt(data.get(position).getScore())<70){
+    else if(score_fl<70){
 //        合格
         Resources resources = context.getResources();
         @SuppressLint("UseCompatLoadingForDrawables") Drawable btnDrawable = resources.getDrawable(R.drawable.b4);
         ispass.setBackground(btnDrawable);
     }
-    else if(Integer.parseInt(data.get(position).getScore())<90) {
+    else if(score_fl<90) {
 //        合格
         Resources resources = context.getResources();
         @SuppressLint("UseCompatLoadingForDrawables") Drawable btnDrawable = resources.getDrawable(R.drawable.b3);
