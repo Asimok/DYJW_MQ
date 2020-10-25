@@ -63,7 +63,7 @@ public class scoredetailFragment extends Fragment {
         all_score = new ArrayList<getscore_datainfo>();
         all_xuenian = new ArrayList<String>();
 
-        String cookies = PrefUtils.getString(getActivity(), "cookies", "");//读取已经保存的数据
+        String cookies = PrefUtils.getString(requireActivity(), "cookies", "");//读取已经保存的数据
         if (cookies.equals(""))
             relogin();
 
@@ -92,10 +92,10 @@ public class scoredetailFragment extends Fragment {
         call.enqueue(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
-                getActivity().runOnUiThread(new Runnable() {
+                requireActivity().runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        Toast.makeText(getActivity(), "连接教务处服务器失败！", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(requireActivity(), "连接教务处服务器失败！", Toast.LENGTH_SHORT).show();
                     }
                 });
                 e.printStackTrace();
@@ -165,10 +165,10 @@ public class scoredetailFragment extends Fragment {
         call.enqueue(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
-                getActivity().runOnUiThread(new Runnable() {
+                requireActivity().runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        Toast.makeText(getActivity(), "连接教务处服务器失败！", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(requireActivity(), "连接教务处服务器失败！", Toast.LENGTH_SHORT).show();
                     }
                 });
                 e.printStackTrace();
@@ -226,16 +226,14 @@ public class scoredetailFragment extends Fragment {
                         e.printStackTrace();
                     }
                 } else//重新登录
-                {
                     relogin();
-                }
             }
 
         });
     }
 
     private void changedata() {
-        getActivity().runOnUiThread(new Runnable() {
+        requireActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
 
@@ -257,7 +255,7 @@ public class scoredetailFragment extends Fragment {
     }
 
     private void createdata() {
-//        getActivity().runOnUiThread(new Runnable() {
+//        requireActivity().runOnUiThread(new Runnable() {
 //            @SuppressLint("DefaultLocale")
 //            @Override
 //            public void run() {
@@ -330,13 +328,13 @@ public class scoredetailFragment extends Fragment {
     public void show_score_Result()
     //封装遍历的数据
     {
-        getActivity().runOnUiThread(new Runnable() {
+        requireActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
 
 
                 //数据适配器
-                scoredetail_adapter score_data_adapter = new scoredetail_adapter(getActivity(), all_list_score);
+                scoredetail_adapter score_data_adapter = new scoredetail_adapter(requireActivity(), all_list_score);
                 show_scoredetail_lv.setAdapter(score_data_adapter);
             }
         });
@@ -344,8 +342,10 @@ public class scoredetailFragment extends Fragment {
 
     public void relogin() {
 
-        Intent intent = new Intent(getActivity(), login.class);
+        Intent intent = new Intent(requireActivity(), login.class);
         startActivity(intent);
+        //requireActivity().onBackPressed();//销毁自己
+        requireActivity().finish();
 
     }
 }

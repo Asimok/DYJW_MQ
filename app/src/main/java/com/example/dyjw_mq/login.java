@@ -84,20 +84,29 @@ public class login extends AppCompatActivity {
 //                "username": "2020-10-21T13:42:43.178+00:00"
                savename(username);
 
-
                 Intent intent = new Intent(getApplication(), MainActivity.class);
                 startActivity(intent);
                 finish();
             }
             else if (msg.what == 4) {
                 Toast.makeText(getApplicationContext(), msg.obj.toString(), Toast.LENGTH_SHORT).show();
+                if (!msg.obj.toString().equals("验证码不正确")) {
+                    password_ed.setText("");
+                }
+                capt_ed.setText("");
                 get_capt_img();
             }
             else if (msg.what == 5) {
+                //注销
+                username_ed.setText("");
+                password_ed .setText("");
+                capt_ed.setText("");
+                get_capt_img();
                 Toast.makeText(getApplicationContext(), msg.obj.toString(), Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(getApplication(), MainActivity.class);
-                startActivity(intent);
-                finish();
+
+//                Intent intent = new Intent(getApplication(), MainActivity.class);
+//                startActivity(intent);
+//                finish();
             }
         }
     };
@@ -213,9 +222,7 @@ public class login extends AppCompatActivity {
         }
     }
 
-    public void logon(View view) {
-        cookieStore.clear();
-    }
+
 
     public void get_capt_img() {
         capt_url = "http://jwgl.nepu.edu.cn/yzm?d=";

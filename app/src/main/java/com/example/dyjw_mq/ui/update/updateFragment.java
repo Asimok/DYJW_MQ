@@ -24,6 +24,7 @@ import com.tencent.bugly.beta.download.DownloadTask;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Objects;
 
 
 public class updateFragment extends Fragment {
@@ -88,7 +89,7 @@ public class updateFragment extends Fragment {
                 public void onClick(View v) {
                     Beta.cancelDownload();
                     //跳转fragment
-                    NavController navController = Navigation.findNavController(getActivity(), R.id.nav_host_fragment);
+                    NavController navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment);
                     navController.navigate(R.id.nav_home);
                 }
             });
@@ -131,8 +132,9 @@ public class updateFragment extends Fragment {
                 public void onClick(View v) {
 //                    Beta.cancelDownload();
                     //跳转fragment
-                    NavController navController = Navigation.findNavController(getActivity(), R.id.nav_host_fragment);
-                    navController.navigate(R.id.nav_home);
+//                    NavController navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment);
+//                    navController.navigate(R.id.nav_home);
+                    requireActivity().onBackPressed();//销毁自己
                 }
             });
         }

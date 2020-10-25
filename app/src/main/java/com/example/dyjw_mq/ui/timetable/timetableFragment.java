@@ -55,7 +55,7 @@ public class timetableFragment extends BackHandledFragment {
         webSettings.setBuiltInZoomControls(true);
 
         webView.setWebViewClient(new timetableFragment.MyWebViewClient());
-        String cookies = PrefUtils.getString(getActivity(), "cookies", "");//读取已经保存的数据
+        String cookies = PrefUtils.getString(requireActivity(), "cookies", "");//读取已经保存的数据
         setCookie(cookies,url);
         webView.loadUrl(url);
         return root;
@@ -108,7 +108,7 @@ public class timetableFragment extends BackHandledFragment {
 
     //判断app是否安装
     private boolean isInstall(Intent intent) {
-        return this.getActivity().getPackageManager().queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY).size() > 0;
+        return this.requireActivity().getPackageManager().queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY).size() > 0;
     }
 
     //打开app
