@@ -18,8 +18,8 @@ android {
         applicationId "com.example.dyjw_mq"
         minSdkVersion 24
         targetSdkVersion 30
-        versionCode 4
-        versionName "v1.3正式版"
+        versionCode 6
+        versionName "v1.5正式版"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         ndk {
             // 设置支持的SO库架构

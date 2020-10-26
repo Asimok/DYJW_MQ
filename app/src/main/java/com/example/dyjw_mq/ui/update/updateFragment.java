@@ -57,6 +57,7 @@ public class updateFragment extends Fragment {
         cancel = root.findViewById(R.id.cancel);
         start = root.findViewById(R.id.start);
         info = root.findViewById(R.id.info);
+        Log.d(logs,"进入更新");
         if (!(Beta.getStrategyTask() == null)) {
             updateBtn(Beta.getStrategyTask());
             tv.setText(tv.getText().toString() + Beta.getStrategyTask().getSavedLength() + "");

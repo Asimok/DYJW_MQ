@@ -44,6 +44,7 @@ import okhttp3.Response;
 
 
 public class login extends AppCompatActivity {
+    public static login instance;
     private EditText username_ed, password_ed, capt_ed;
     private String username, password, capt;
     private ImageView capt_img;
@@ -86,7 +87,7 @@ public class login extends AppCompatActivity {
 
                 Intent intent = new Intent(getApplication(), MainActivity.class);
                 startActivity(intent);
-                finish();
+                login.instance.finish();
             }
             else if (msg.what == 4) {
                 Toast.makeText(getApplicationContext(), msg.obj.toString(), Toast.LENGTH_SHORT).show();
@@ -136,7 +137,10 @@ public class login extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        instance=this;
         setContentView(R.layout.activity_login);
+        MainActivity.instance.finish();
+
         capt_img = findViewById(R.id.capt_img);
         username_ed = findViewById(R.id.username);
         password_ed = findViewById(R.id.password);
@@ -267,7 +271,6 @@ public class login extends AppCompatActivity {
             }
         });
     }
-
     public void reget_capt(View view) {
         get_capt_img();
     }

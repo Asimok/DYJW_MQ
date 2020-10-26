@@ -14,6 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 
+import com.example.dyjw_mq.MainActivity;
 import com.example.dyjw_mq.R;
 import com.example.dyjw_mq.login;
 import com.example.dyjw_mq.tools.PrefUtils;
@@ -200,17 +201,19 @@ public class scoredetailFragment extends Fragment {
                                     String credit = jsonObj2.getString("xf");
                                     String score = jsonObj2.getString("zcjfs");
                                     String xuenian = jsonObj2.getString("xnxqmc");
+                                    String course_type = jsonObj2.getString("xdfsmc");
+                                    //  去除公选
+                                     if(!course_type.trim().equals("公选")) {
 
-                                    getscore_datainfo mapx = new getscore_datainfo();
+                                         getscore_datainfo mapx = new getscore_datainfo();
 //                                    Log.d(logs,gpa);
-                                    mapx.setGpa(gpa);
-                                    mapx.setXuenian(xuenian);
-                                    mapx.setCredit(credit);
-                                    mapx.setScore(score);
+                                         mapx.setGpa(gpa);
+                                         mapx.setXuenian(xuenian);
+                                         mapx.setCredit(credit);
+                                         mapx.setScore(score);
 
-
-                                    all_score.add(mapx);
-
+                                         all_score.add(mapx);
+                                     }
                                 }
 
                                 //处理数据
@@ -263,10 +266,15 @@ public class scoredetailFragment extends Fragment {
         //得到学期
         int len = all_xuenian.size();
         for (int i = 0; i < len; i++) {
+
+
+
             float max = 0, ssum = 0, sgpa = 0, meangpa = 0, means = 0, sc = 0;
             int lt60 = 0, aclass = 0;//小于60的数
             int rt60 = 0, rt70 = 0, rt80 = 0, rt90 = 0, rt100 = 0;
             for (int j = 0; j < all_score.size(); j++) {
+
+
                 if (all_score.get(j).getXuenian().equals(all_xuenian.get(i))) {
                     float score = Float.parseFloat(all_score.get(j).getScore());
                     if (max < score)
@@ -291,6 +299,7 @@ public class scoredetailFragment extends Fragment {
                     aclass++;
 
                 }
+
             }
 
             means = ssum / sc;
@@ -320,6 +329,7 @@ public class scoredetailFragment extends Fragment {
 
             //可以显示一轮
             show_score_Result();
+
         }
 //            }
 //        });
@@ -342,10 +352,10 @@ public class scoredetailFragment extends Fragment {
 
     public void relogin() {
 
-        Intent intent = new Intent(requireActivity(), login.class);
+        Intent intent = new Intent(MainActivity.instance, login.class);
         startActivity(intent);
         //requireActivity().onBackPressed();//销毁自己
-        requireActivity().finish();
+       // requireActivity().finish();
 
     }
 }
